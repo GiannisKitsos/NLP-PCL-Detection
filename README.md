@@ -177,6 +177,18 @@ Exploratory data analysis is in `eda-analysis.ipynb`. It covers:
 
 ---
 
+## Error Analysis and Local Evaluation
+
+Error analysis and all local evaluation code is in `Best_Model/model_training.ipynb`, in the sections following model training. It covers:
+
+- **Confusion matrix** on the dev set
+- **Precision-Recall curve** with the chosen classification threshold marked
+- **False positive and false negative inspection** — concrete examples with text, keyword, and predicted probability
+- **Error distribution by keyword** — bar chart showing which topic keywords (e.g. homeless, refugee) the model struggles with most, broken down by false positives and false negatives
+- **Ablation study** — effect of removing the keyword prefix and reducing max_length from 256 to 128
+
+All generated plots are saved in the `plots/` directory.
+
 ## Notes on Reproducibility
 
 - Seed is fixed at 42 across `torch`, `numpy`, `random`, and `transformers` for reproducibility
