@@ -45,7 +45,7 @@ Best_Model/best_model_checkpoint/
 ## Repository Structure
 
 ```
-├── Best_Model/
+├── BestModel/
 │   └── model_training.ipynb               # Full training, evaluation and inference notebook
 ├── plots/                        # Figures generated during EDA and evaluation
 │   ├── confusion_matrix.png
@@ -112,7 +112,7 @@ pip install -r requirements.txt
 
 ### Training
 
-Open and run `Best_Model/train.ipynb` in order. The notebook covers:
+Open and run `BestModel/model_training.ipynb` in order. The notebook covers:
 1. Data loading and preprocessing
 2. Tokenisation with keyword prefix
 3. Model training with Focal Loss
@@ -130,7 +130,7 @@ Update `DATA_PATH` at the top of the notebook to point to your local data direct
 | Learning rate | 8e-6 |
 | Batch size | 8 (effective: 32 with gradient accumulation steps=4) |
 | Weight decay | 0.01 |
-| Warmup ratio | 0.1 |
+| Warmup ratio | 0.06 |
 | LR scheduler | cosine |
 | Loss function | Focal Loss (alpha=1-pos_ratio, gamma=2) |
 | fp16 | True |
@@ -143,8 +143,8 @@ If you only want to regenerate predictions using the saved checkpoint:
 ```python
 # 1. Download model.safetensors and place in Best_Model/best_model_checkpoint/
 # 2. Load model and tokenizer
-tokenizer = AutoTokenizer.from_pretrained("Best_Model/best_model_checkpoint", local_files_only=True)
-model = AutoModelForSequenceClassification.from_pretrained("Best_Model/best_model_checkpoint", local_files_only=True)
+tokenizer = AutoTokenizer.from_pretrained("BestModel/best_model_checkpoint", local_files_only=True)
+model = AutoModelForSequenceClassification.from_pretrained("BestModel/best_model_checkpoint", local_files_only=True)
 model = model.to("cuda")
 
 # 3. Run inference - see model_training.ipynb for full generate_predictions() function
@@ -176,7 +176,7 @@ Exploratory data analysis is in `eda-analysis.ipynb`. It covers:
 
 ## Error Analysis and Local Evaluation
 
-Error analysis and all local evaluation code is in `Best_Model/model_training.ipynb`, in the sections following model training. It covers:
+Error analysis and all local evaluation code is in `BestModel/model_training.ipynb`, in the sections following model training. It covers:
 
 - **Confusion matrix** on the dev set
 - **Precision-Recall curve** with the chosen classification threshold marked
