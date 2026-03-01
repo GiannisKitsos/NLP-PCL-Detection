@@ -17,15 +17,12 @@ This project fine-tunes `roberta-large` to detect Patronising and Condescending 
 
 The trained model checkpoint is too large to store in Git.
 
-**Download the full checkpoint folder from:** *(add Google Drive link here)*
+**Download the full checkpoint folder from:** *https://drive.google.com/drive/folders/1ciEL_Avr_dhefk9UxXj-GBQBfTCHy0gN?usp=share_link*
 
 After downloading, place the entire folder at:
 ```
 Best_Model/best_model_checkpoint/
 ```
-
-The folder should contain: `model.safetensors`, `config.json`, `tokenizer.json`, `tokenizer_config.json`, `training_args.bin`.
-
 ---
 
 ## Results
