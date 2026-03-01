@@ -147,7 +147,7 @@ tokenizer = AutoTokenizer.from_pretrained("Best_Model/best_model_checkpoint", lo
 model = AutoModelForSequenceClassification.from_pretrained("Best_Model/best_model_checkpoint", local_files_only=True)
 model = model.to("cuda")
 
-# 3. Run inference - see train.ipynb for full generate_predictions() function
+# 3. Run inference - see model_training.ipynb for full generate_predictions() function
 # Optimal threshold for this model is 0.85
 dev_preds  = generate_predictions(model, encoded_dev,  threshold=0.85)
 test_preds = generate_predictions(model, encoded_test, threshold=0.85)
