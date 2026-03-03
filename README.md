@@ -21,7 +21,7 @@ The trained model checkpoint is too large to store in Git.
 
 After downloading, place the entire folder at:
 ```
-Best_Model/best_model_checkpoint/
+BestModel/best_model_checkpoint/
 ```
 ---
 
